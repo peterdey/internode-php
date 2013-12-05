@@ -375,6 +375,7 @@
       $darkgreen = imagecolorallocate($im, 0, 102,0);
       $blue = imagecolorallocate($im, 0,0,204);
       $orange = imagecolorallocate($im, 153,153,0);
+      $xred = imagecolorallocate($im, 224,0,0);
 
       // And graph colours.
       //
@@ -556,7 +557,7 @@
 	    $unit = "Mb";
 	  }
           $string = sprintf("WARNING: You are %.1f %s over quota!", $over, $unit );
-          imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 4), $string, $red);
+          imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 4), $string, $xred);
 	}
       } else {
         $string = $string = sprintf("Graph Interval: %d days", count($this->history));
