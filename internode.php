@@ -380,8 +380,8 @@
       //
       $gwhite = imagecolorallocate($graph, 255,255,255);
       $red = imagecolorallocate($graph, 224,0,0);
-      $green = imagecolorallocate($graph, 0,204,0);
-      $purple = imagecolorallocate($graph, 204,0,204);
+      $green = imagecolorallocate($graph, 0,70,0);
+      $purple = imagecolorallocate($graph, 104,0,104);
       $yellow = imagecolorallocate($graph, 255,255,0);
       $gblue = imagecolorallocate($graph, 0,0,204);
       $gorange = imagecolorallocate($graph, 153,153,0);
