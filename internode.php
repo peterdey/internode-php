@@ -531,7 +531,11 @@
         imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 3), $string, $darkgreen);
 
 	if($this->remaining > 0) {
-          $string = sprintf("Daily Remaining: %.1f Mb   Total Remaining: %.1f Gb", ($this->remaining / $this->days_remaining), ($this->remaining/1000) );
+          if ($this->remaining < 1000) {
+            $string = sprintf("Daily Remaining:  %6.1f Mb  Total Remaining: %5.1f Mb", ($this->remaining / $this->days_remaining), $this->remaining );
+          } else {
+            $string = sprintf("Daily Remaining: %6.1f Mb  Total Remaining: %5.1f Gb", ($this->remaining / $this->days_remaining), ($this->remaining/1000) );
+          }
           imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 4), $string, $orange);
 	} else {
 	  $over = abs($this->remaining);
