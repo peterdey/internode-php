@@ -524,10 +524,10 @@
       imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 1), $string, $black);
 
       if(!$this->unlimited) {
-        $string = $string = sprintf("Graph Interval: %d days   Remaining: %d days", count($this->history), $this->days_remaining);
+        $string = $string = sprintf("Graph Interval: %4d days   Remaining:        %2d days", count($this->history), $this->days_remaining);
         imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 2), $string, $blue);
 
-        $string = sprintf("Daily Transfer: %.1f Mb   Total Transfer: %.1f Gb", ($total / count($this->history)), $total/1000);
+        $string = sprintf("Daily Transfer:  %6.1f Mb  Total Transfer: %6.1f Gb", ($total / count($this->history)), $total/1000);
         imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 3), $string, $darkgreen);
 
 	if($this->remaining > 0) {
