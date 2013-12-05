@@ -455,6 +455,9 @@
 	if($this->history[$i]->usage > 0) {
 	  $y = $this->history[$i]->usage * IMAGE_HEIGHT / $max;
           imagefilledrectangle($graph, ($i*$dx), (IMAGE_HEIGHT-$y), ($i*$dx)+$dx, IMAGE_HEIGHT, $green);
+          if (count($this->history) <= 90) {
+            imagerectangle($graph, ($i*$dx), (IMAGE_HEIGHT-$y), ($i*$dx)+$dx, IMAGE_HEIGHT, $gwhite);
+          }
 	} else { 
 	  $y = (abs($this->history[$i]->usage)) * (IMAGE_HEIGHT) / $max;
           imagefilledrectangle($graph, ($i*$dx), (IMAGE_HEIGHT-$y), ($i*$dx)+$dx, IMAGE_HEIGHT, $yellow);
@@ -478,7 +481,7 @@
 	}
 
 	// Add quarterly moving average.
-	if($i > 0) {
+	if($i > 0 && count($this->history) > 90) {
   	  for($j = ($i-44); $j <= ($i+44); $j++) {
 	    if( $this->history[$j] ) {
               $avg_m += abs($this->history[$j]->usage);
