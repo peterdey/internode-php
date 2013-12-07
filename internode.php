@@ -537,7 +537,7 @@
       imagedashedline($graph, 0, (IMAGE_HEIGHT-$y), $g_width, (IMAGE_HEIGHT-$y), $gblue);
 
       // Add remaining daily average.
-      $y = ($this->remaining/$this->days_remaining) * (IMAGE_HEIGHT) / $max;
+      $y = ($this->remaining/BYTE_A_MB/$this->days_remaining) * (IMAGE_HEIGHT) / $max;
       imagedashedline($graph, 0, (IMAGE_HEIGHT-$y), $g_width, (IMAGE_HEIGHT-$y), $gorange);
 
       // Graph done. Resize it to target.
