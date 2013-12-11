@@ -135,9 +135,6 @@
     }
 
     function init() {
-      $url = "https://".INTERNODE_HOST.INTERNODE_URI;
-      $this->get_service_id($url);
-
       if(!file_exists(INTERNODE_CACHE))
         $this->refresh_cache();
       else if( filemtime(INTERNODE_CACHE) < (time() - 3600))
@@ -147,6 +144,9 @@
     }
 
     function refresh_cache() {
+      $url = "https://".INTERNODE_HOST.INTERNODE_URI;
+      $this->get_service_id($url);
+
       // Do we need to specify a number of days to get hysterical data for?
       $count = (GRAPH_DAYS != 0) ? '?count=' . GRAPH_DAYS : '';
 
