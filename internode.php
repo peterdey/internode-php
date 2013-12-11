@@ -558,7 +558,7 @@
         $string = $string = sprintf("Graph Interval:  %4d days   Remaining:         %2d days", count($this->history), $this->days_remaining);
         imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 2), $string, $blue);
 
-        $string = sprintf("Daily Transfer:  %9s   Total Transfer:  %9s", format_size($this->used / count($this->history)), format_size($this->used));
+        $string = sprintf("Daily Transfer:  %9s   Total Transfer:  %9s", format_size($total / count($this->history) * BYTE_A_MB), format_size($this->used));
         imagestring($im, 2, IMAGE_BORDER_LEFT+IMAGE_BORDER+imagefontwidth(2), (imagefontheight(2) * 3), $string, $darkgreen);
 
         if($this->remaining > 0) {
