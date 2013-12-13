@@ -428,7 +428,7 @@
 
       // Calculate bar width.
       //
-      $dx = ( IMAGE_WIDTH - IMAGE_BORDER * 2 ) / (count($this->history)+1);
+      $dx = $g_width / count($this->history);
 
       // Find scale maximum.
       //
@@ -466,7 +466,7 @@
       //
       $mod = intval(count($this->history)/8);
 
-      $dlx = ( IMAGE_WIDTH - IMAGE_BORDER * 2 ) / (count($this->history)+1);
+      $dlx = ( $g_width - IMAGE_BORDER * 2 ) / (count($this->history));
 
       for($i = 0; $i < count($this->history); $i++)
         if($i % $mod == 0)
